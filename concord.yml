@@ -3,8 +3,7 @@ configuration:
   - "mvn://com.walmartlabs.concord.plugins:jira-task:1.39.0"
   - mvn://com.squareup.okio:okio:1.13.0
   - mvn://com.squareup.okhttp3:okhttp:3.9.1
-    jiraParams:
-      apiUrl: "https://macefimeteam.atlassian.net/rest/api/2/"
+
 flows:
   default:
     - log: "Hello, ${fimdata}"
