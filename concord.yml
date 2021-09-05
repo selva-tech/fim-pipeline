@@ -17,8 +17,6 @@ flows:
         description: "FIM test "
         requestorUid: "mselvarajumca@gmail.com"
         issueType: "Bug"
- 
- 
 
     # the issue ID is stored as `issueId`
     - log: "Issue ID: ${issueId}"
