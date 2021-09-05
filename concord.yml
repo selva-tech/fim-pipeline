@@ -6,7 +6,7 @@ configuration:
 
 flows:
   default:
-    - log: "Hello, ${fimdata}"
+    - log: "Hello, ${fimName} - ${fimLines} - ${fimHost}"
     - task: http
       in:
         auth:
@@ -23,8 +23,8 @@ flows:
                {
                   "key": "WEB"
                },
-               "summary": "FIM A file has been changed - ${fimdata}",
-               "description": "FIM A file has been changed - ${fimdata}",
+               "summary": "FIM A file has been changed - ${fimName} -  ${fimHost}",
+               "description": "FIM A file has been changed - ${fimName} -  ${fimHost} - \n  ${fimLines} ",
                "issuetype": {
                   "name": "Bug"
                }
