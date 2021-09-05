@@ -14,7 +14,6 @@ flows:
         projectKey: "WEB"
         summary: "FIM test "
         description: "FIM test "
-        requestorUid: "mselvarajumca@gmail.com"
         issueType: "Bug"
 
     # the issue ID is stored as `issueId`
