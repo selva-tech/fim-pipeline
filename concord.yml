@@ -26,7 +26,7 @@ flows:
         println ( "Line target_path " + object_lines.columns.get("target_path")) 
         
         execution.setVariable("target_path", object_lines.columns.get("target_path"))
-        
+        execution.setVariable("modifedTime", object_lines.calendarTime)
     - log: "Hello, ${target_path}"
     - task: http
       in:
@@ -45,7 +45,7 @@ flows:
                   "key": "WEB"
                },
                "summary": "FIM A file has been changed - ${fimName} -  ${fimHost}",
-               "description": "FIM A file has been changed - ${fimName} -  ${fimHost} - \n  ${target_path} ",
+               "description": "FIM A file has been changed - ${fimName} -  ${fimHost} - \n  ${target_path}  - ${modifedTime}",
                "issuetype": {
                   "name": "Bug"
                }
