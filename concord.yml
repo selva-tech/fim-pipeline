@@ -12,7 +12,8 @@ flows:
       in:
         auth:
           basic:
-            token: "${crypto.exportAsString('Default', 'jira-apikey',null)}"
+            username: svijayashrima@gmail.com
+            password: password
         request: json
         method: POST
         url: "https://macefimeteam.atlassian.net/rest/api/2/issue"
