@@ -3,10 +3,17 @@ configuration:
   - "mvn://com.walmartlabs.concord.plugins:jira-task:1.39.0"
   - mvn://com.squareup.okio:okio:1.13.0
   - mvn://com.squareup.okhttp3:okhttp:3.9.1
-
+  - mvn://org.codehaus.groovy:groovy-all:pom:2.5.2
+  
 flows:
   default:
     - log: "Hello, ${fimName} - ${fimLines} - ${fimHost}"
+    - script: groovy
+      body: |
+        def jsonSlurper = new JsonSlurper()
+        def object = jsonSlurper.parseText(fimLines) 
+        execution.setVariable("target_path", object._line.columns.target_path)
+    - log: "Hello, ${target_path}"
     - task: http
       in:
         auth:
@@ -24,7 +31,7 @@ flows:
                   "key": "WEB"
                },
                "summary": "FIM A file has been changed - ${fimName} -  ${fimHost}",
-               "description": "FIM A file has been changed - ${fimName} -  ${fimHost} - \n  ${fimLines} ",
+               "description": "FIM A file has been changed - ${fimName} -  ${fimHost} - \n  ${target_path} ",
                "issuetype": {
                   "name": "Bug"
                }
