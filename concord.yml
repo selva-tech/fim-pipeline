@@ -44,8 +44,8 @@ flows:
                {
                   "key": "WEB"
                },
-               "summary": "FIM A file has been changed - ${fimName} -  ${fimHost}",
-               "description": "FIM A file has been changed - ${fimName} -  ${fimHost} - \n  ${target_path}  - ${modifedTime}",
+               "summary": "FIM ${fimHost} ${fimName} ${target_path}  - ${modifedTime} ",
+               "description": "FIM A file has been changed - ${fimName} -  ${fimHost} - \n FileName: ${target_path}  - Modified Time: ${modifedTime}",
                "issuetype": {
                   "name": "Bug"
                }
