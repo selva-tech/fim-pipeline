@@ -28,8 +28,8 @@ flows:
                "issuetype": {
                   "name": "Bug"
                }
-           }
-        }
+            }
+          }
         response: json
         out: jsonResponse
     - if: ${jsonResponse.success}
