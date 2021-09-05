@@ -24,7 +24,9 @@ flows:
         println ( "-----------------------")
         def modifedTargets = "";
         for (i=0; i<object_lines.columns.length; i++){
+           println ( "*********************************")
            def object_lines_column = jsonSlurper.parseText(object_lines.columns[i]) 
+           println ("target_path:" + object_lines_column.target_path)
            modifedTargets += object_lines_column.target_path
         }
         
