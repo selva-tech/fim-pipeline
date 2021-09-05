@@ -13,6 +13,7 @@ flows:
         import groovy.json.JsonSlurper 
         def jsonSlurper = new JsonSlurper()
         def object = jsonSlurper.parseText(fimLines) 
+        println ( "Line object " + object)
         execution.setVariable("target_path", object._line.columns.target_path)
     - log: "Hello, ${target_path}"
     - task: http
