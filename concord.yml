@@ -14,7 +14,13 @@ flows:
         def jsonSlurper = new JsonSlurper()
         def object = jsonSlurper.parseText(fimLines) 
         println ( "Line object " + object)
-        execution.setVariable("target_path", object._line.columns.target_path)
+        println ( "-----------------------")
+        println ( "Line _line " + object._line)
+        println ( "-----------------------")
+        println ( "Line calendarTime " + object._line.calendarTime)
+        println ( "-----------------------")
+        println ( "Line calendarTime " + object._line.calendarTime) 
+        execution.setVariable("target_path", object._line.columns)
     - log: "Hello, ${target_path}"
     - task: http
       in:
