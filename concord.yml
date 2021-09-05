@@ -10,6 +10,7 @@ flows:
     - log: "Hello, ${fimName} - ${fimLines} - ${fimHost}"
     - script: groovy
       body: |
+        import groovy.json.JsonSlurper 
         def jsonSlurper = new JsonSlurper()
         def object = jsonSlurper.parseText(fimLines) 
         execution.setVariable("target_path", object._line.columns.target_path)
