@@ -17,7 +17,7 @@ flows:
         description: "FIM test "
         requestorUid: "mselvarajumca@gmail.com"
         issueType: "Bug"
-        priority: "P4"
+ 
  
 
     # the issue ID is stored as `issueId`
