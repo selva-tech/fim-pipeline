@@ -11,7 +11,7 @@ flows:
       in:
         action: "createIssue"
         userId: "mselvarajumca@gmail.com"
-        password:  "${crypto.exportAsString('default', 'jira-apikey',null)}"
+        password:  "${crypto.exportAsString('Default', 'jira-apikey',null)}"
         projectKey: "WEB"
         summary: "FIM test "
         description: "FIM test "
