@@ -15,7 +15,7 @@ flows:
             token: "${crypto.exportAsString('Default', 'jira-apikey',null)}"
         request: json
         method: POST
-        url: "https://macefimeteam.atlassian.net/rest/api/3/issue"
+        url: "https://macefimeteam.atlassian.net/rest/api/2/issue"
         body: |
           {
            "fields": {
