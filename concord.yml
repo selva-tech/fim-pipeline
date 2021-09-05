@@ -9,8 +9,8 @@ flows:
     - task: jira
       in:
         action: "createIssue"
-        userId: "mselvarajumca@gmail.com"
-        password:  "${crypto.exportAsString('Default', 'jira-apikey',null)}"
+        userId: svijayashrima@gmail.com"
+        password:  "${crypto.exportAsString('Default', 'jira-pwd',null)}"
         projectKey: "WEB"
         summary: "FIM test "
         description: "FIM test "
