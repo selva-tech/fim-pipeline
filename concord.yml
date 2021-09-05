@@ -1,32 +1,24 @@
 configuration:
   dependencies:
   - "mvn://com.walmartlabs.concord.plugins:jira-task:1.39.0"
-
+  arguments:
+    jiraParams:
+      apiUrl: "https://macefimeteam.atlassian.net/rest/api/2/"
 flows:
   default:
   
     - task: jira
       in:
         action: "createIssue"
-        userId: "${initiator.username}"
-        password: "myJiraPassword" # should be encrypted and exported using `crypto` task
-        projectKey: "MYPROJECTKEY"
-        summary: "mySummary"
-        description: "myDescription"
-        requestorUid: "${initiator.username}"
+        userId: "mselvarajumca@gmail.com"
+        password:  "${crypto.exportAsString('default', 'jira-apikey',null)}"
+        projectKey: "WEB"
+        summary: "FIM test "
+        description: "FIM test "
+        requestorUid: "mselvarajumca@gmail.com"
         issueType: "Bug"
         priority: "P4"
-
-        # complex fields, the actual field names and values depend on the configuration of the JIRA instance
-        customFieldsTypeFieldAttr:
-          customfield_10212: # environment
-            value: "Development"
-
-          customfield_10216: # severity
-            value: "4 - Cosmetic"
-
-          customfield_20400: # application/service (array of values)
-            - "2125921"      # "SDE - Concord"
+ 
 
     # the issue ID is stored as `issueId`
     - log: "Issue ID: ${issueId}"
