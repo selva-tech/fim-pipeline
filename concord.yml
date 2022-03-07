@@ -13,20 +13,16 @@ flows:
         import groovy.json.JsonSlurper 
         def jsonSlurper = new JsonSlurper()
         def object = jsonSlurper.parseText(fimLines) 
-        println ( "Line object " + object)
+ 
+        println ( "Line calendarTime " + object.calendarTime)
         println ( "-----------------------")
-        println ( "Line _line " + object._line)
-        println ( "-----------------------")
-        def object_lines = jsonSlurper.parseText(object._line) 
-        println ( "Line calendarTime " + object_lines.calendarTime)
-        println ( "-----------------------")
-        println ( "Line columns " + object_lines.columns) 
+        println ( "Line columns " + object.columns) 
         println ( "-----------------------")
             
-        println ( "Line target_path " + object_lines.columns.get("target_path")) 
+        println ( "Line target_path " + object.columns.get("target_path")) 
         
-        execution.setVariable("target_path", object_lines.columns.get("target_path"))
-        execution.setVariable("modifedTime", object_lines.calendarTime)
+        execution.setVariable("target_path", object.columns.get("target_path"))
+        execution.setVariable("modifedTime", object.calendarTime)
     - log: "Hello, ${target_path}"
     - task: http
       in:
